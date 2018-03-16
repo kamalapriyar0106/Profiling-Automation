@@ -19,12 +19,17 @@ public class profilingAutomationTesting extends ProfilingSpecificWrappers{
 			selectVisibileTextById("ConditionsList", "Cardiology Cost Report");
 			clickById("SearchButton");
 			clickByXpath("//div[@class='lockedItemInner']/span/input");
+		}
+		
+		@Test
+		public void PPPageTesting() throws InterruptedException{
 			//Click on "Export to CSV"
 			clickById("Results_exportToCsv_ShowHide");
 			Thread.sleep(3000);
 			//Closing current window
 			switchToLastWindow();
 			closeBrowser();
+			clickById("Results_advancedSort_ShowHide");
 		}
 		
 		@Test(enabled=false)
